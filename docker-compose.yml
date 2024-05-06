@@ -37,7 +37,7 @@ services:
             - .docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
             - .docker/db/sql:/docker-entrypoint-initdb.d
         environment:
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: roto1234
             MYSQL_DATABASE: refactorian
             MYSQL_USER: refactorian
             MYSQL_PASSWORD: refactorian
@@ -61,32 +61,32 @@ services:
     ####################################################################################################
     # Adminer
     ####################################################################################################
-    adminer:
-        image: adminer
-        ports:
-            - 9090:8080
-        depends_on:
-        - db
+    #adminer:
+    #    image: adminer
+    #    ports:
+    #        - 9090:8080
+    #    depends_on:
+    #    - db
 
     ####################################################################################################
     # Mailpit
     ####################################################################################################
-    mail:
-        image: axllent/mailpit:latest
-        ports:
-        - 8025:8025
-        - 1025:1025
+    #mail:
+     #   image: axllent/mailpit:latest
+      #  ports:
+       # - 8025:8025
+        #- 1025:1025
 
     ####################################################################################################
     # Redis
     ####################################################################################################
-    redis:
-        image: redis:latest
-        command: redis-server --appendonly yes
-        volumes:
-        - .docker/redis/data:/data
-        ports:
-        - 6379:6379
+    #redis:
+     #   image: redis:latest
+      #  command: redis-server --appendonly yes
+       # volumes:
+        #- .docker/redis/data:/data
+        #ports:
+        #- 6379:6379
 
     # ####################################################################################################
     # # DATABASE (MariaDB)
